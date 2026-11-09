@@ -1,29 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Postframe — Privacy</title>
-<style>
-  body { margin: 0; font: 16px/1.55 -apple-system, system-ui, sans-serif; background: #101014; color: #e8e8ee; }
-  main { max-width: 640px; padding: 40px 24px 60px; }
-  h1 { font-size: 28px; margin: 0 0 16px; }
-  h2 { font-size: 18px; margin: 24px 0 6px; }
-</style>
+<title>Postframe / privacy policy</title>
+<meta name="description" content="What Postframe does with a link, and why there is nothing to collect.">
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<main>
-  <h1>Postframe Privacy</h1>
-  <p><strong>No data is collected.</strong> Postframe has no account, no server, and no analytics.</p>
-  <h2>What happens on your device</h2>
+<nav><div class="wrap nav-in">
+  <a class="mark" href="index.html">Post<span>frame</span></a>
+  <div class="nav-links"><a href="index.html#what">What it does</a><a href="index.html#pricing">Pricing</a><a href="release/index.html">Release</a><a href="privacy.html">Privacy</a></div>
+</div></nav>
+<main class="wrap narrow">
+  <div class="eyebrow">Privacy policy</div>
+  <h1>Nothing leaves your phone.</h1>
+  <p class="lede">Postframe reads a public post and draws a card with it, on the device. There is no
+  Postframe account, no Postframe server, and no analytics service watching.</p>
+  <p class="note" style="margin-top:12px">Effective 2026-11-08 · applies to Postframe for iPhone and iPad</p>
+
+  <div class="panel">
+    <p><b>The short version.</b> The developer collects no data from this app. Links are read on the
+    device, exports are drawn on the device, and the only things stored are the ones listed below, in
+    the app's own storage.</p>
+  </div>
+
+  <h2 class="sec">What is collected</h2>
+  <p>Nothing is collected by the developer. Postframe has no analytics, no telemetry, no crash
+  reporting service and no advertising identifiers. There is no developer-operated server that a
+  link, an export or a usage record passes through.</p>
+  <p>The App Store's privacy label for this app is "Data Not Collected". This page is the detail
+  behind that label.</p>
+
+  <h2 class="sec">How a link is read</h2>
+  <p>When you paste or share an X link, the app asks <code>api.fxtwitter.com</code>, a public
+  third-party mirror, for the post, from your device; that mirror sees the link and your IP address.
+  Every other platform is asked for its own public page or embed, from your device, the same way a
+  browser would. The post text and media are used to draw the card. They are not uploaded anywhere
+  by Postframe.</p>
+  <p>Each platform sees that request the way it would see any anonymous page view, and what it does
+  with the request is described in its own privacy policy. Some posts need a session you sign in to
+  inside the app; that session is the system's own web store on this device, and Postframe does not
+  copy its cookies anywhere.</p>
+
+  <h2 class="sec">What stays on your device</h2>
   <ul>
-    <li>The link you paste is fetched from the platform's public page or public mirror (for example api.fxtwitter.com for X, bsky.app for Bluesky, or your Mastodon instance). The only thing sent is the URL of the link you pasted — nothing about you.</li>
-    <li>Card text, themes and export history are stored only on your device.</li>
-    <li>Exports are written to your Photos library. Sharing is done by you.</li>
-    <li>Speech recognition (timed caption mode) runs on-device.</li>
-    <li>Purchases and subscriptions are handled by Apple's App Store. Postframe never sees your payment details.</li>
+    <li><b>Links you loaded</b>, in the app's own storage, so a card can be reopened.</li>
+    <li><b>Your export history</b>: a small index plus the files you exported, with thumbnails. Free
+    keeps the last 10, Pro the last 50. Deleting an entry, or the app, removes them.</li>
+    <li><b>Your settings</b>: theme, ratio, layout and the rest.</li>
   </ul>
-  <p>No tracking. No third-party analytics or advertising SDKs.</p>
+  <p>None of this is synced to iCloud by Postframe and none of it is sent to the developer.</p>
+
+  <h2 class="sec">Captions</h2>
+  <p>If you ask Postframe to caption a clip, the clip's own audio is transcribed by Apple's on-device
+  speech framework on this iPhone. The audio used for that transcription is not uploaded by
+  Postframe. Captions are stored with the export they belong to and can be cleared with it.</p>
+
+  <h2 class="sec">A credential you supply yourself</h2>
+  <p>The app has a device-only Keychain store for a credential you supply yourself, for a platform
+  or for a resolver you run. No screen in version 1.0 asks for one, so out of the box there is
+  nothing to add and no key is sent anywhere.</p>
+  <p>When a release offers that field, this is what happens to a value you enter:</p>
+  <ul>
+    <li>It is stored in the iOS Keychain with the <code>AfterFirstUnlockThisDeviceOnly</code>
+    protection class, so it does not sync and does not leave this device.</li>
+    <li>It is sent only to the endpoint you entered for it, over HTTPS.</li>
+    <li>The app's connection log records the host and path of a test request, never a query string,
+    a header or a token.</li>
+  </ul>
+  <p>There is no developer-operated resolver and no default credential in the app.</p>
+
+  <h2 class="sec">Photos, speech and sharing</h2>
+  <p>Postframe asks for add-only photo library access at the moment you tap Save, and uses it only to
+  put the finished export in your library. It asks for speech recognition only when you caption a
+  clip. The share extension receives a link only when you choose to share one to Postframe; that
+  link is written to the app's own inbox and stays there until the app reads it.</p>
+
+  <h2 class="sec">Purchases</h2>
+  <p>Pro is sold by Apple through the App Store. Payment and receipt handling happen entirely inside
+  Apple's systems. Postframe reads whether an entitlement is active; it never sees a card number or a
+  billing address.</p>
+
+  <h2 class="sec">Children</h2>
+  <p>Postframe is not directed at children and collects no personal information from anyone, of any
+  age.</p>
+
+  <h2 class="sec">Changes</h2>
+  <p>If this policy changes, the new version is published here with a new effective date. A change
+  that involved collecting something new would be a change to the app itself, and would be described
+  before it shipped.</p>
+
+  <h2 class="sec">Contact</h2>
+  <p>Support address: TBA before release.</p>
 </main>
+<footer class="wrap">
+  <span class="mark" style="font-size:16px">Post<span>frame</span></span>
+  <span>Built by one person.</span>
+  <span style="margin-left:auto;display:flex;gap:20px;flex-wrap:wrap">
+    <a href="privacy.html">Privacy</a>
+    <a href="release/index.html">Release</a>
+    <span>Support: TBA</span>
+  </span>
+</footer>
 </body>
 </html>
